@@ -1,8 +1,14 @@
-pipelineJob('pipelineJob') {
+pipelineJob('theme-park-ride') {
     definition {
-        cps {
-            script(readFileFromWorkspace('pipelineJob.groovy'))
-            sandbox()
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'https://github.com/amarquezp/spring-boot-jenkins.git'
+                    }
+                    branch 'master'
+                }
+            }
         }
     }
 }
